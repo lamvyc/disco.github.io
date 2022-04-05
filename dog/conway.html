@@ -13,10 +13,10 @@
     }
     h1 {
       text-align: center;
-      color: greenyellow;
+      color: rgb(210, 47, 255);
     }
     p {
-      color: rgb(215, 67, 245);
+      color: rgb(159, 67, 245);
     }
     #grid {
       /* 检测换行符 */
@@ -37,9 +37,9 @@
   <h1>康威生命</h1>
 
   <div>尺寸<input type="range" id="range" min='5' max='100' value='20'><p id="rangeHint"></p></div>
-  <button onclick="next()">Next generation</button>
-  <div class="opt"><input type="checkbox" id="ifAuto">自动进化!</div>
-  <div class="opt"><input type="checkbox" id="cancelB">取消边境!</div>
+  <button onclick="next()">Next</button>
+  <div class="opt"><input type="checkbox" id="ifAuto">自动进化</div>
+  <div class="opt"><input type="checkbox" id="cancelB">取消边境</div>
   <button onclick="clearAll()">清空</button>
   <button onclick="randomNew()">重新随机</button>
   <div id="hint"></div>
@@ -65,7 +65,7 @@
       printWorld(callback) {
         return callback(this.world)
       }
-      randomFill(ratio = 0.5) {
+      randomFill(ratio = 0.5) {//填充比例
         this.world = this.world.map(it => it.map(n =>  Math.random() > ratio ? 0 : 1))
       }
       setBoundary(booleanTF) {
